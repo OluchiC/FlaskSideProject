@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Luchi's web app</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('main') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+
+    <!--The two lines with curly brackets
+    will be replaced on demand by either
+    the home.html, or the about.html code
+    depending on which URL the user is browsing
+    <div class="container">
+    -->
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
